@@ -1,0 +1,110 @@
+<div class="modal-dialog" >
+  <div class="row">
+    <div class="col-lg-12">
+      <button type="submit" class="eqrs-dialog-close" [md-dialog-close]="false"><i class="fa fa-close" ></i></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 mat-dialog-title>Select organization</h2>
+    </div>
+
+  </div>
+  <div md-dialog-content >
+    <form [formGroup]="formGroup">
+      <div class="row col-md-12 d-flex">
+
+        <div class="col-md-4">
+          <label><b>Org name</b></label>
+          <input class="eqrs-input col-md-12" id="orgName" type="text" formControlName="orgName">
+        </div>
+
+        <div class="col-md-4">
+          <label><b>Org zip code</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoCounties" formControlName="zipCode">
+          </md-input-container>
+          <md-autocomplete #autoCounties="mdAutocomplete" >
+            <md-option *ngFor="let zipCode of zipCodes" [value]="zipCode">{{ zipCode }}</md-option>
+          </md-autocomplete>
+        </div>
+
+        <div class="col-md-4">
+          <label><b>CCN</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoCcn" formControlName="ccn">
+          </md-input-container>
+          <md-autocomplete #autoCcn="mdAutocomplete" >
+            <md-option *ngFor="let ccn of ccns" [value]="ccn">{{ ccn }}</md-option>
+          </md-autocomplete>
+        </div>
+      </div>
+
+      <div class="row col-md-12 d-flex">
+        <div class="col-md-4">
+          <label><b>Org type</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoOrgType" formControlName="orgType">
+          </md-input-container>
+          <md-autocomplete #autoOrgType="mdAutocomplete" >
+            <md-option *ngFor="let orgType of orgTypes" [value]="orgType">{{ orgType }}</md-option>
+          </md-autocomplete>
+        </div>
+
+        <div class="col-md-4">
+          <label><b>Org city</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoCities" formControlName="city">
+          </md-input-container>
+          <md-autocomplete #autoCities="mdAutocomplete" >
+            <md-option *ngFor="let city of cities" [value]="city">{{ city }}</md-option>
+          </md-autocomplete>
+        </div>
+
+        <div class="col-md-4">
+          <label><b>NPI</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoNpi" formControlName="npi">
+          </md-input-container>
+          <md-autocomplete #autoNpi="mdAutocomplete" >
+            <md-option *ngFor="let npi of npis" [value]="npi">{{ npi }}</md-option>
+          </md-autocomplete>
+        </div>
+      </div>
+      <div class="row col-md-12 d-flex">
+        <div class="col-md-4">
+          <label><b>Org state</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoStates" formControlName="state">
+          </md-input-container>
+          <md-autocomplete #autoStates="mdAutocomplete" >
+            <md-option *ngFor="let state of states" [value]="state">{{ state }}</md-option>
+          </md-autocomplete>
+        </div>
+        <div class="col-md-4">
+          <label><b>Org country</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoCounties" formControlName="country">
+          </md-input-container>
+          <md-autocomplete #autoCounties="mdAutocomplete" >
+            <md-option *ngFor="let country of countries" [value]="country">{{ country }}</md-option>
+          </md-autocomplete>
+        </div>
+        <div class="col-md-4">
+          <label><b>TIN</b></label>
+          <md-input-container class="col-md-12">
+            <input class="eqrs-input" mdInput [mdAutocomplete]="autoTin" formControlName="tin">
+          </md-input-container>
+          <md-autocomplete #autoTin="mdAutocomplete" >
+            <md-option *ngFor="let tin of tins" [value]="tin">{{ tin }}</md-option>
+          </md-autocomplete>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div md-dialog-actions  class="row  eqrs-dialog-button-spacing">
+    <button md-button [md-dialog-close]="false" class="eqrs-button-secondary  col-md-5"  aria-label="Cancel dialog">Cancel</button>
+    <button md-button [md-dialog-close]="getObj()" class="eqrs-button-primary col-md-5" aria-label="Save">Save</button>
+  </div>
+</div>

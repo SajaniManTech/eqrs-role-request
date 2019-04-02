@@ -1,0 +1,152 @@
+/* You can add global styles to this file, and also import other style files */
+$font-path:   'assets/fonts';
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+@import "eqrs-style.scss";
+@import "eqrs-material-styles";
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/_mixins.scss";
+@import "../node_modules/bootstrap/scss/_list-group.scss";
+@import "../node_modules/bootstrap/scss/_alert.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/bootstrap/scss/mixins/cards.scss";
+@import "../node_modules/bootstrap/scss/_card.scss";
+@import "../node_modules/bootstrap/scss/_tables.scss";
+@import "../node_modules/bootstrap/scss/dropdown";
+@import "../node_modules/bootstrap/scss/buttons";
+
+@import "variables";
+@import "fonts.scss";
+
+
+$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+
+//$image-path:'../node_modules/uswds/src/img';
+
+
+
+//@import '../node_modules/uswds/src/stylesheets/_all.scss';
+
+
+$eqrs-sans-serif-font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+
+
+body {
+  font-family: $eqrs-sans-serif-font-family;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5em/26px;
+}
+
+.header-padding{
+  padding-bottom: 35px;
+}
+
+
+p {
+  word-wrap:break-word;
+}
+
+/*
+
+@mixin button {
+  border-radius: $eqrs-border-radius;
+  min-width: 120px;
+  min-height: 44px;
+  //margin: 4px;
+  font-family: $eqrs-sans-serif-font-family;
+  font-size: 1.1em;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s ease;
+
+  &:focus {
+    outline: none;
+    box-shadow: $eqrs-box-shadow;
+  }
+
+  @media (max-width: 667px){
+    width: 100%;
+  }
+}
+
+
+.eqrs-button-secondary {
+  @include button;
+  color: $eqrs-secondary-color;
+  background-color: #fff;
+  border: 1px solid $eqrs-secondary-color !important;
+  transition: all .2s ease;
+  &:hover {
+    color: #fff;
+    background-color: $eqrs-secondary-color;
+  }
+
+  &:active {
+    background-color: $eqrs-secondary-darker;
+  }
+
+  &:disabled {
+    background-color: $eqrs-tertiary-color;
+  }
+}
+
+.eqrs-button-primary {
+  @include button;
+  color: #fff;
+  background-color: $eqrs-primary-color;
+  border: 1px solid $eqrs-primary-color !important;
+
+  &:hover {
+    background-color: $eqrs-primary-darker;
+  }
+
+  &:active {
+    background-color: $eqrs-primary-darkest;
+  }
+
+  &:disabled {
+    background-color: $eqrs-tertiary-color;
+  }
+}
+*/
+
+.eqrs-blue-border {
+  border: 1px solid $eqrs-primary-color !important;
+}
+
+.services-accordion > .row {
+  border: 1px solid $eqrs-tertiary-color ;
+  padding: 1rem;
+  margin-left: -15px;
+  margin-right: 0;
+  border-radius: 4px;
+}
+
+.eqrs-error-border > .services-accordion > .row {
+  @extend .eqrs-input-error-border;
+}
+
+
+
+.eqrs-dialog-close {
+  border: none;
+  background: none;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  float: right;
+  cursor: pointer;
+}
+
+.eqrs-dialog-button-spacing {
+  justify-content: space-around;
+}

@@ -1,0 +1,269 @@
+<div class="col-md-12 align-items-center">
+  <div class="form-group" [formGroup]="form">
+
+    <div class="row container">
+      <div class="col-md-12 pt-4">
+        <h1>Request user access</h1>
+      </div>
+      <div class="col-md-12">
+        <h3>User information</h3>
+        <hr>
+        <div class="col-md-12 d-flex">
+          <div class="col-md-4">
+            <label><b>User id</b></label>
+            <p>EQRS_QUALABCD999</p>
+          </div>
+          <div class="col-md-4">
+            <label><b>Name</b></label>
+            <p>John Doe</p>
+          </div>
+          <div class="col-md-4">
+            <label><b>Email</b></label>
+            <p>test@test.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <h3>User request information</h3>
+        <hr>
+
+        <div class="col-md-12 d-flex flex-wrap">
+          <div class="col-md-4">
+            <label>EQRS application</label>
+            <select class="eqrs-select col-md-12" formControlName="program">
+              <option value=""></option>
+              <option value="CROWNWeb">CROWNWeb</option>
+              <option value="QIP">QIP</option>
+              <option value="Security">Security</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label>Organization type</label>
+            <select class="eqrs-select col-md-12" formControlName="orgType">
+              <option value=""></option>
+              <option value="CMS">CMS</option>
+              <option value="Network">Network</option>
+              <option value="Facility">Facility</option>
+              <option value="CMS support">CMS support</option>
+              <option value="Corporation">Corporation</option>
+            </select>
+          </div>
+          <div class="col-md-4" *ngIf="showNetwork">
+            <label>Network</label>
+            <select class="eqrs-select col-md-12" formControlName="network">
+              <option value=""></option>
+              <option value="Network 1">Network 1</option>
+              <option value="Network 2">Network 2</option>
+              <option value="Network 3">Network 3</option>
+              <option value="Network 4">Network 4</option>
+              <option value="Network 5">Network 5</option>
+              <option value="Network 6">Network 6</option>
+              <option value="Network 7">Network 7</option>
+              <option value="Network 8">Network 8</option>
+              <option value="Network 9">Network 9</option>
+              <option value="Network 10">Network 10</option>
+              <option value="Network 11">Network 11</option>
+              <option value="Network 12">Network 12</option>
+              <option value="Network 13">Network 13</option>
+              <option value="Network 14">Network 14</option>
+              <option value="Network 15">Network 15</option>
+              <option value="Network 16">Network 16</option>
+              <option value="Network 17">Network 17</option>
+              <option value="Network 18">Network 18</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label>User role</label>
+            <select class="eqrs-select col-md-12" formControlName="role">
+              <option value="" disabled></option>
+              <option>User role 1</option>
+              <option>User role 2</option>
+              <option>User role 3</option>
+              <option>User role 4</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label>Approvers</label>
+            <select class="eqrs-select col-md-12" formControlName="approver">
+              <option value=""></option>
+              <option>Approver 1</option>
+              <option>Approver 2</option>
+              <option>Approver 3</option>
+              <option>Approver 4</option>
+            </select>
+          </div>
+
+          <!--<div class="row col-md-12 d-flex">-->
+
+            <!--<div class="col-md-4">-->
+              <!--<label><b>Org name</b></label>-->
+              <!--<input class="eqrs-input col-md-12" id="orgName" type="text" formControlName="orgName">-->
+            <!--</div>-->
+
+            <!--<div class="col-md-4">-->
+              <!--<label><b>Org zip code</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoZipCodes" formControlName="zipCode">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoZipCodes="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let zipCode of zipCodes" [value]="zipCode">{{ zipCode }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+
+            <!--<div class="col-md-4">-->
+              <!--<label><b>CCN</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoCcn" formControlName="ccn">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoCcn="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let ccn of ccns" [value]="ccn">{{ ccn }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="row col-md-12 d-flex">-->
+            <!--<div class="col-md-4">-->
+              <!--<label><b>Org type</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoOrgType" formControlName="orgType">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoOrgType="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let orgType of orgTypes" [value]="orgType">{{ orgType }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+
+            <!--<div class="col-md-4">-->
+              <!--<label><b>Org city</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoCities" formControlName="city">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoCities="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let city of cities" [value]="city">{{ city }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+
+            <!--<div class="col-md-4">-->
+              <!--<label><b>NPI</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoNpi" formControlName="npi">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoNpi="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let npi of npis" [value]="npi">{{ npi }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--<div class="row col-md-12 d-flex">-->
+            <!--<div class="col-md-4">-->
+              <!--<label><b>Org state</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoStates" formControlName="state">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoStates="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let state of states" [value]="state">{{ state }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+            <!--<div class="col-md-4">-->
+              <!--<label><b>Org country</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoCounties" formControlName="country">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoCounties="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let country of countries" [value]="country">{{ country }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+            <!--<div class="col-md-4">-->
+              <!--<label><b>TIN</b></label>-->
+              <!--<md-input-container class="col-md-12">-->
+                <!--<input class="eqrs-input" mdInput [mdAutocomplete]="autoTin" formControlName="tin">-->
+              <!--</md-input-container>-->
+              <!--<md-autocomplete #autoTin="mdAutocomplete" >-->
+                <!--<md-option *ngFor="let tin of tins" [value]="tin">{{ tin }}</md-option>-->
+              <!--</md-autocomplete>-->
+            <!--</div>-->
+          <!--</div>-->
+
+        </div>
+        <div class="col-md-12" *ngIf="showOrgLookup">
+          <h4>SEARCH</h4>
+          <div class="d-flex">
+            <div class="col-md-5 pl-1">
+              <label class="pl-1 pt-2">Search by organization name, CCN or NPI number</label>
+              <div class="pl-1">
+                <md-input-container class="col-md-12 pl-0">
+                  <span class="fa fa-search fa-lg mb-3"></span>
+                  <input type="text" mdInput formControlName="search" [mdAutocomplete]="auto">
+                </md-input-container>
+                <md-autocomplete #auto="mdAutocomplete">
+                  <md-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                  </md-option>
+                </md-autocomplete>
+              </div>
+            </div>
+            <div class="col-md-3 pl-1">
+              <label class="pl-1 pt-2">Search by zip code</label>
+              <div class="pl-1">
+                <md-input-container class="col-md-12 pl-0">
+                  <span class="fa fa-search fa-lg mb-3"></span>
+                  <input type="text" mdInput formControlName="zip" [mdAutocomplete]="autoZip">
+                </md-input-container>
+                <md-autocomplete #autoZip="mdAutocomplete">
+                  <md-option *ngFor="let option of filteredOptionsZip | async" [value]="option">
+                    {{option}}
+                  </md-option>
+                </md-autocomplete>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 mt-3 d-flex">
+          <div class="col-md-3">
+            <button type="submit" class="eqrs-button-primary" name="add" (click)="addTableData()">Add</button>
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="eqrs-button-primary" name="reset" (click)="resetForm()">Reset</button>
+          </div>
+        </div>
+
+        <table class="table col-md-12 ml-4" *ngIf="tableData.length >= 1">
+          <thead>
+            <tr>
+              <th scope="col">Organization Name</th>
+              <th scope="col" *ngIf="showNetworkColumn">Network</th>
+              <th scope="col">Role</th>
+              <!--<th scope="col">Address</th>-->
+              <!--<th scope="col">City</th>-->
+              <!--<th scope="col">State</th>-->
+              <th scope="col">Zip code</th>
+              <th scope="col" *ngIf="showCcnNpiColumn">CCN</th>
+              <th scope="col" *ngIf="showCcnNpiColumn">NPI</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of tableData">
+              <td>{{data.program}} - {{data.orgName}}</td>
+              <td *ngIf="showNetworkColumn">{{data.network}}</td>
+              <td>{{data.role}}</td>
+              <!--<td>{{data.address}}</td>-->
+              <!--<td>{{data.city}}</td>-->
+              <!--<td>{{data.state}}</td>-->
+              <td>{{data.zipCode}}</td>
+              <td *ngIf="showCcnNpiColumn">{{data.CCN}}</td>
+              <td *ngIf="showCcnNpiColumn">{{data.NPI}}</td>
+              <td><a (click)="removeItem(data)"><i class="fa fa-remove eqrs-link"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="row col-md-12 ml-4 pl-4">
+        <button type="submit" class="eqrs-button-primary pl-4 mt-4 col-md-2" name="submit" (click)="onSubmit()" [disabled]="tableData.length < 1">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
